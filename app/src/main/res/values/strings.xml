@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Zadanie1</string>
+    <string name="change_contact">CHANGE CONTACT</string>
+    <string name="change_sound">CHANGE SOUND</string>
+    <string name="kontakt">Kontakt</string>
+    <string name="imie_i_nazwisko">Imie i nazwisko</string>
+    <string name="cofnij">cofnij</string>
+    <string name="ok">ok</string>
+    <string name="sound1">Sound1</string>
+    <string name="sound2">Sound2</string>
+    <string name="sound3">Sound3</string>
+    <string name="sound4">Sound4</string>
+    <string name="sound5">Sound5</string>
+    <string name="cofnij2">cofnij</string>
+    <string name="ok2">OK</string>
+    <string name="sound6">Sound6</string>
+    <string name="sound7">Sound7</string>
+    <string-array name="kontakty_array">
+        <item>Kuba</item>
+        <item>Patryk</item>
+        <item>Artur</item>
+        <item>Kasia</item>
+        <item>Mateusz</item>
+        <item>Basia</item>
+        <item>Paulina</item>
+        <item>Zosia</item>
+    </string-array>
+</resources>
