@@ -8,7 +8,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 public class Wybor_kontaktu extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     @Override
@@ -31,22 +30,19 @@ public class Wybor_kontaktu extends AppCompatActivity implements AdapterView.OnI
             @Override
             public void onClick(View v) {
                 String text=parent.getItemAtPosition ( position ).toString ();
-                //Toast.makeText ( parent.getContext (),text,Toast.LENGTH_SHORT ).show ();
-                Intent main_intent=new Intent ( getApplicationContext (), MainActivity.class);
+                Intent main_intent=new Intent ( );
                 main_intent.putExtra ( "contact_name", text);
-                startActivity ( main_intent );
+                setResult ( RESULT_OK, main_intent );
+                finish ();
             }
 
         } );
         button_cancel.setOnClickListener ( new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                //Toast.makeText ( parent.getContext (),text,Toast.LENGTH_SHORT ).show ();
-                Intent main_intent=new Intent ( getApplicationContext (), MainActivity.class);
-                Intent intent1=getIntent ();
-                String contact_previous = intent1.getStringExtra ("contact_previous");
-                main_intent.putExtra ( "contact_name", contact_previous);
-                startActivity ( main_intent);
+                Intent main_intent=new Intent ( );
+                setResult ( RESULT_OK, main_intent );
+                finish ();
         }
         } );
     }

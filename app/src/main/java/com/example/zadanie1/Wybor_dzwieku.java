@@ -18,7 +18,6 @@ public class Wybor_dzwieku extends AppCompatActivity {
         final RadioGroup radioGroup = findViewById ( R.id.radioGroup );
         final RadioButton[] radioButton = new RadioButton[1];
         final Button button_ok=findViewById ( R.id.button6);
-        final Intent intent1 = getIntent ();
         Button button_cancel=findViewById ( R.id.button5 );
         button_ok.setOnClickListener ( new View.OnClickListener () {
             @Override
@@ -26,11 +25,10 @@ public class Wybor_dzwieku extends AppCompatActivity {
                 try {
                     int radioId = radioGroup.getCheckedRadioButtonId ();
                     radioButton[0] = findViewById ( radioId );
-                    // button_ok.setText ( radioButton[0].getText () );
-                    Intent main_intent = new Intent ( getApplicationContext (), MainActivity.class );
+                    Intent main_intent=new Intent ( );
                     main_intent.putExtra ( "sound", radioButton[0].getText () );
-                    main_intent.putExtra ( "contact_name", intent1.getStringExtra ( "name" ) );
-                    startActivity ( main_intent );
+                    setResult ( RESULT_OK, main_intent );
+                    finish ();
                     }
                 catch (Exception ignored) { }
             }
@@ -38,11 +36,9 @@ public class Wybor_dzwieku extends AppCompatActivity {
         button_cancel.setOnClickListener ( new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-               Intent main_intent=new Intent ( getApplicationContext (), MainActivity.class);
-                String sound_previous = intent1.getStringExtra ("sound_previous");
-                main_intent.putExtra ( "sound", sound_previous);
-                main_intent.putExtra ( "contact_name", intent1.getStringExtra ( "name" ) );
-                startActivity ( main_intent);
+                Intent main_intent=new Intent ( );
+                setResult ( RESULT_OK, main_intent );
+                finish ();
             }
         } );
     }
